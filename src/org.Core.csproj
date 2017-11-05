@@ -1,0 +1,349 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{06E04C8C-AEF7-45C8-9DD0-42980EF6F48B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>org.Core</RootNamespace>
+    <AssemblyName>org.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity.Design" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Channels" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Conversion\TypeConverters.cs" />
+    <Compile Include="Data\AdoDotNetDbParameterRetriever.cs" />
+    <Compile Include="Data\DbQueryExecutorFactory.cs" />
+    <Compile Include="Data\Entities\DataColumns.cs" />
+    <Compile Include="Data\Entities\DataColumn.cs" />
+    <Compile Include="Data\IDbQueryExecutor.cs" />
+    <Compile Include="Data\IDbQueryExecutorFactory.cs" />
+    <Compile Include="Data\UnknownMemberAttribute.cs" />
+    <Compile Include="Data\_DbQueryExecutors\DefaultQueryExecutor.cs" />
+    <Compile Include="Data\_DbQueryExecutors\MultipleRowsQueryExecutor.cs" />
+    <Compile Include="Data\_DbQueryExecutors\ScalarValueQueryExecutor.cs" />
+    <Compile Include="Data\_DbQueryExecutors\SingleRowQueryExecutor.cs" />
+    <Compile Include="Data\_DbQueryExecutors\SchemaOnlyQueryExecutor.cs" />
+    <Compile Include="OidAttribute.cs" />
+    <Compile Include="TypeUtils.cs" />
+    <Compile Include="_ValueDescriptors\BooleanDescriptor.cs" />
+    <Compile Include="Collections\NullEnumerator.cs" />
+    <Compile Include="Collections\IListCollection.cs" />
+    <Compile Include="Collections\INameValueCollection.cs" />
+    <Compile Include="Collections\ListCollection.cs" />
+    <Compile Include="Collections\IReadOnlyListCollection.cs" />
+    <Compile Include="Collections\NameValueCollection.cs" />
+    <Compile Include="Collections\ReadOnlyListCollection.cs" />
+    <Compile Include="Collections\IReadOnlyNameValueCollection.cs" />
+    <Compile Include="Collections\ReadOnlyNameValueCollection.cs" />
+    <Compile Include="Compression\CompressionEntry.cs" />
+    <Compile Include="Compression\DirectoryCompressionEntry.cs" />
+    <Compile Include="Compression\FileCompressionEntry.cs" />
+    <Compile Include="Compression\CompressionEntryCollection.cs" />
+    <Compile Include="Configuration\ConfigElementBase.cs" />
+    <Compile Include="Configuration\ConfigElementCollectionBase.cs" />
+    <Compile Include="Configuration\Configs.cs" />
+    <Compile Include="Configuration\IRegistryPathInfo.cs" />
+    <Compile Include="Conversion\_TypeConverters\GuidConverter.cs" />
+    <Compile Include="Data\DbQueryExecutedEventArgs.cs" />
+    <Compile Include="Data\DbQueryExecutingEventArgs.cs" />
+    <Compile Include="Data\DbQueryFailedEventArgs.cs" />
+    <Compile Include="Data\EntityMember.cs" />
+    <Compile Include="Data\EntityMemberAttribute.cs" />
+    <Compile Include="Data\IDbQueryOperatingSessionProvider.cs" />
+    <Compile Include="Data\IDbQueryOperationContextProvider.cs" />
+    <Compile Include="Data\DbQueryOperatingPrinciple.cs" />
+    <Compile Include="Data\IEntityMember.cs" />
+    <Compile Include="Data\IIgnoreChildProperty.cs" />
+    <Compile Include="Data\IIgnoreChildPropertyProvider.cs" />
+    <Compile Include="Data\DbQueryOperatingSessionStateChangedEventArgs.cs" />
+    <Compile Include="_ValueDescriptors\GuidDescriptor.cs" />
+    <Compile Include="IValueDescriptor.cs" />
+    <Compile Include="_ValueDescriptors\UInt16Descriptor.cs" />
+    <Compile Include="_ValueDescriptors\UInt64Descriptor.cs" />
+    <Compile Include="_ValueDescriptors\UInt32Descriptor.cs" />
+    <Compile Include="_ValueDescriptors\TimeSpanDescriptor.cs" />
+    <Compile Include="_ValueDescriptors\StringDescriptor.cs" />
+    <Compile Include="_ValueDescriptors\FloatDescriptor.cs" />
+    <Compile Include="_ValueDescriptors\SByteDescriptor.cs" />
+    <Compile Include="_ValueDescriptors\DoubleDescriptor.cs" />
+    <Compile Include="_ValueDescriptors\DecimalDescriptor.cs" />
+    <Compile Include="_ValueDescriptors\DateTimeDescriptor.cs" />
+    <Compile Include="_ValueDescriptors\ByteDescriptor.cs" />
+    <Compile Include="_ValueDescriptors\Int16Descriptor.cs" />
+    <Compile Include="_ValueDescriptors\Int64Descriptor.cs" />
+    <Compile Include="_ValueDescriptors\Int32Descriptor.cs" />
+    <Compile Include="Data\_IgnoreChildProperty\IgnoreChildPropertyAttribute.cs" />
+    <Compile Include="Data\_IgnoreChildProperty\IgnoreChildPropertyDescriptors.cs" />
+    <Compile Include="Data\_IgnoreChildProperty\IgnoreChildPropertyDescriptor.cs" />
+    <Compile Include="Data\_IgnoreChildProperty\IgnoreChildPropertyHelpers.cs" />
+    <Compile Include="Design\INamingService.cs" />
+    <Compile Include="Design\EnglishUnitedStateNamingService.cs" />
+    <Compile Include="Design\NamingServiceFactory.cs" />
+    <Compile Include="Net\DownloadFailedEventArgs.cs" />
+    <Compile Include="Net\DownloadProgressChangedEventArgs.cs" />
+    <Compile Include="Net\INetworkFileServiceProvider.cs" />
+    <Compile Include="Net\FtpFileUploader.cs" />
+    <Compile Include="Net\FtpFileUtil.cs" />
+    <Compile Include="Net\UploadCompletedEventHandler.cs" />
+    <Compile Include="Net\UploadCompletedEventArgs.cs" />
+    <Compile Include="Net\UploadFailedEventArgs.cs" />
+    <Compile Include="Net\UploadFailedEventHandler.cs" />
+    <Compile Include="Net\UploadProgressChangedEventArgs.cs" />
+    <Compile Include="Net\UploadProgressChangedEventHandler.cs" />
+    <Compile Include="OperationResourceAttribute.cs" />
+    <Compile Include="Serialization\IValueSerializable.cs" />
+    <Compile Include="NotifySynchronizationEntry.cs" />
+    <Compile Include="NotifySynchronizationEventArgs.cs" />
+    <Compile Include="NotifySynchronizationEventHandler.cs" />
+    <Compile Include="Configuration\RegistryEntryCollection.cs" />
+    <Compile Include="Configuration\RegistryNodeHelpers.cs" />
+    <Compile Include="Configuration\RegistryNodePath.cs" />
+    <Compile Include="Configuration\RegistryNodeName.cs" />
+    <Compile Include="Configuration\RegistryRootType.cs" />
+    <Compile Include="Configuration\RegistryNameValuePair.cs" />
+    <Compile Include="Configuration\Settings.cs" />
+    <Compile Include="Configuration\DataServicesConfigElement.cs" />
+    <Compile Include="Configuration\DataServicesConfigElementCollection.cs" />
+    <Compile Include="Configuration\SettingsConfigElement.cs" />
+    <Compile Include="Configuration\SettingsConfigElementCollection.cs" />
+    <Compile Include="Conversion\_TypeConverters\BooleanConverter.cs" />
+    <Compile Include="Conversion\_TypeConverters\ByteConverter.cs" />
+    <Compile Include="Conversion\_TypeConverters\ClrTypeConverter.cs" />
+    <Compile Include="Conversion\_TypeConverters\NameValueCollectionConverter.cs" />
+    <Compile Include="Conversion\_TypeConverters\SqlDbTypeConverter.cs" />
+    <Compile Include="Conversion\_TypeConverters\SqlXmlConverter.cs" />
+    <Compile Include="Conversion\_TypeConverters\XmlDocumentConverter.cs" />
+    <Compile Include="Conversion\_TypeConverters\TimeSpanConverter.cs" />
+    <Compile Include="Conversion\_TypeConverters\DateTimeOffsetConverter.cs" />
+    <Compile Include="Conversion\_TypeConverters\DateTimeConverter.cs" />
+    <Compile Include="Conversion\_TypeConverters\DecimalConverter.cs" />
+    <Compile Include="Conversion\_TypeConverters\DoubleConverter.cs" />
+    <Compile Include="Conversion\_TypeConverters\FloatConverter.cs" />
+    <Compile Include="Conversion\_TypeConverters\Int16Converter.cs" />
+    <Compile Include="Conversion\_TypeConverters\Int32Converter.cs" />
+    <Compile Include="Conversion\_TypeConverters\Int64Converter.cs" />
+    <Compile Include="Conversion\ITypeConverter.cs" />
+    <Compile Include="Conversion\_TypeConverters\StringConverter.cs" />
+    <Compile Include="Conversion\TypeConverter.cs" />
+    <Compile Include="Cryptography\IEncryptable.cs" />
+    <Compile Include="Data\AdoDotNetDbParameterHelpers.cs" />
+    <Compile Include="Data\DbConnection.cs" />
+    <Compile Include="Data\DbQueryExecutingEventHandler.cs" />
+    <Compile Include="Data\DbQueryFailedEventHandler.cs" />
+    <Compile Include="Data\DbQueryExecutedEventHandler.cs" />
+    <Compile Include="Data\DbQueryException.cs" />
+    <Compile Include="Data\DbQueryOperatingSessionCollection.cs" />
+    <Compile Include="Data\DbQueryExceptionCollection.cs" />
+    <Compile Include="Data\DbQueryValidatedEventHandler.cs" />
+    <Compile Include="Data\EntryDescriptorManager.cs" />
+    <Compile Include="Data\DbQueryOperatingSessionStateChangedEventHandler.cs" />
+    <Compile Include="Data\DbQueryOperatingSessionStates.cs" />
+    <Compile Include="Data\_DbQueryOperation\DbQueryOperationContractAttribute.cs" />
+    <Compile Include="Data\_DbQueryOperation\DbQueryOperationExecutor.cs" />
+    <Compile Include="Data\DbQueryParameterMapper.cs" />
+    <Compile Include="Data\_DbQueryAction\DbQueryActionAttribute.cs" />
+    <Compile Include="Compression\FileCompressor.cs" />
+    <Compile Include="Compression\ICompressible.cs" />
+    <Compile Include="Compression\ICompressionEntry.cs" />
+    <Compile Include="IApplicationIdentity.cs" />
+    <Compile Include="Compression\ICompressionEntryCollection.cs" />
+    <Compile Include="Net\DownloadFailedEventHandler.cs" />
+    <Compile Include="Net\DownloadCompletedEventHandler.cs" />
+    <Compile Include="Net\DownloadProgressChangedEventHandler.cs" />
+    <Compile Include="Net\WebRequestHelpers.cs" />
+    <Compile Include="Net\WebRequestMethod.cs" />
+    <Compile Include="Net\FtpFileDownloader.cs" />
+    <Compile Include="Net\FtpFileService.cs" />
+    <Compile Include="IExternalResult.cs" />
+    <Compile Include="IExternalResultCollection.cs" />
+    <Compile Include="Net\INetworkFileService.cs" />
+    <Compile Include="Net\INetworkFileDownloadable.cs" />
+    <Compile Include="Net\INetworkFileUploadable.cs" />
+    <Compile Include="OperationResult.cs" />
+    <Compile Include="Configuration\RegistryEntry.cs" />
+    <Compile Include="Configuration\RegistryNodeAttribute.cs" />
+    <Compile Include="ServiceModel\DataServiceContract.cs" />
+    <Compile Include="ServiceModel\SqlServiceContractBuilder.cs" />
+    <Compile Include="ServiceModel\DataServiceContractHelpers.cs" />
+    <Compile Include="Data\DbConnectionPool.cs" />
+    <Compile Include="Data\DbQueryOperatingSession.cs" />
+    <Compile Include="Data\_DbQueryOperation\DbQueryOperation.cs" />
+    <Compile Include="Data\DbQueryPrinciple.cs" />
+    <Compile Include="Data\EntryDescriptor.cs" />
+    <Compile Include="Data\_DbQueryAction\DbQueryActionDescriptors.cs" />
+    <Compile Include="Data\_DbQueryAction\DbQueryActionDescriptor.cs" />
+    <Compile Include="Data\_DbQueryAction\DbQueryActionHelpers.cs" />
+    <Compile Include="Data\_DbQueryContract\DbQueryContract.cs" />
+    <Compile Include="Data\_DbQueryContract\DbQueryContractBuilder.cs" />
+    <Compile Include="Data\_DbQueryProperty\DbQueryPropertyHelpers.cs" />
+    <Compile Include="Data\_DbQueryOperation\DbQueryOperationHelpers.cs" />
+    <Compile Include="Data\_DbQueryContract\DbQueryContractHelpers.cs" />
+    <Compile Include="Data\_DbQueryContract\DbQueryContractDescriptors.cs" />
+    <Compile Include="Data\_DbQueryContract\DbQueryContractDescriptor.cs" />
+    <Compile Include="Data\_DbQueryOperation\DbQueryOperationAttribute.cs" />
+    <Compile Include="Data\DbQueryActions.cs" />
+    <Compile Include="Data\DbQueryOperationContext.cs" />
+    <Compile Include="Data\_DbQueryContract\DbQueryContractAttribute.cs" />
+    <Compile Include="Data\_DbQueryOperation\DbQueryOperationDescriptors.cs" />
+    <Compile Include="Data\_DbQueryOperation\DbQueryOperationDescriptor.cs" />
+    <Compile Include="Data\_DbQueryProperty\DbQueryPropertyAttribute.cs" />
+    <Compile Include="Data\_DbQueryProperty\DbQueryPropertyDescriptors.cs" />
+    <Compile Include="Data\_DbQueryProperty\DbQueryPropertyDescriptor.cs" />
+    <Compile Include="Data\_DbQueryProperty\DbQueryPropertyDirections.cs" />
+    <Compile Include="Data\_DbQueryProperty\DbQueryPropertyValidator.cs" />
+    <Compile Include="Data\DbQueryResult.cs" />
+    <Compile Include="Data\DbQueryResultMapper.cs" />
+    <Compile Include="Data\DbQueryXmlSerializer.cs" />
+    <Compile Include="ServiceModel\DataServiceProxy.cs" />
+    <Compile Include="ServiceModel\IDataServiceContractProvider.cs" />
+    <Compile Include="Data\IDbQueryParameterizable.cs" />
+    <Compile Include="Data\IEntryDescriptorManagerProvider.cs" />
+    <Compile Include="Data\IEntryDescriptorManager.cs" />
+    <Compile Include="Data\IEntryMemberDescriptor.cs" />
+    <Compile Include="Data\IDbQueryAction.cs" />
+    <Compile Include="Data\IDbQueryActionProvider.cs" />
+    <Compile Include="Data\IDbQueryContract.cs" />
+    <Compile Include="Data\IDbQueryContractProvider.cs" />
+    <Compile Include="Data\IDbQueryOperation.cs" />
+    <Compile Include="ServiceModel\IDataServiceContract.cs" />
+    <Compile Include="Data\DbQueryContext.cs" />
+    <Compile Include="ServiceModel\DataServiceContractAttribute.cs" />
+    <Compile Include="Data\DbQueryBehaviors.cs" />
+    <Compile Include="Data\IDbQueryContext.cs" />
+    <Compile Include="Data\IDbQueryOperationExecutor.cs" />
+    <Compile Include="Data\IDbQueryParameterMapper.cs" />
+    <Compile Include="Data\IDbQueryProperty.cs" />
+    <Compile Include="Data\IDbQueryOperationProvider.cs" />
+    <Compile Include="Data\IDbQueryPropertyProvider.cs" />
+    <Compile Include="Data\IDbQueryPropertyValidator.cs" />
+    <Compile Include="Data\IDbQueryResult.cs" />
+    <Compile Include="Data\IDbQueryResultMapper.cs" />
+    <Compile Include="Data\IEntryDescriptor.cs" />
+    <Compile Include="Diagnostics\StackFrameWrapper.cs" />
+    <Compile Include="Diagnostics\StackTraceHelpers.cs" />
+    <Compile Include="Extensions\StringArrayExtensions.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Validation\IValidatable.cs" />
+    <Compile Include="Validation\IValidator.cs" />
+    <Compile Include="Net\IPAddressParser.cs" />
+    <Compile Include="Net\IWebSocketHandshaker.cs" />
+    <Compile Include="Net\WebSocketClient.cs" />
+    <Compile Include="Net\WebSocketClientCollection.cs" />
+    <Compile Include="Net\WebSocketHandshakerBase.cs" />
+    <Compile Include="Net\WebSocketHandshakerFactory.cs" />
+    <Compile Include="Net\WebSocketHandshakerWsv00.cs" />
+    <Compile Include="Net\WebSocketHandshakerWsv06.cs" />
+    <Compile Include="Net\WebSocketHandshakerWsv13.cs" />
+    <Compile Include="Net\WebSocketHeader.cs" />
+    <Compile Include="Net\WebSocketHeaderParser.cs" />
+    <Compile Include="Net\WebSocketServer.cs" />
+    <Compile Include="Net\WebSocketStatus.cs" />
+    <Compile Include="Net\WebSocketUtility.cs" />
+    <Compile Include="Net\WebSocketVersion.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reflection\AttributeMemberDescriptor.cs" />
+    <Compile Include="Reflection\AttributeMemberHelpers.cs" />
+    <Compile Include="Reflection\IAttributeDescriptorProvider.cs" />
+    <Compile Include="Reflection\MemberDescriptors.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Reflection\MethodMemberHelpers.cs" />
+    <Compile Include="Reflection\PropertyMemberDescriptors.cs" />
+    <Compile Include="Reflection\MethodMemberDescriptors.cs" />
+    <Compile Include="Reflection\AttributeMemberDescriptors.cs" />
+    <Compile Include="Reflection\MemberDescriptor.cs" />
+    <Compile Include="Reflection\MethodMemberDescriptor.cs" />
+    <Compile Include="Reflection\PropertyMemberDescriptor.cs" />
+    <Compile Include="Reflection\PropertyMemberHelpers.cs" />
+    <Compile Include="Validation\IValueValidatorFactory.cs" />
+    <Compile Include="Validation\IValueValidatorFactoryProvider.cs" />
+    <Compile Include="Validation\NotSupportedValueValidator.cs" />
+    <Compile Include="Validation\ValueValidateAttribute.cs" />
+    <Compile Include="Validation\ValueValidator.cs" />
+    <Compile Include="Validation\ValueValidatorBase.cs" />
+    <Compile Include="Validation\_ValueValidators\GuidValidator.cs" />
+    <Compile Include="Validation\_ValueValidators\ByteValidator.cs" />
+    <Compile Include="Validation\_ValueValidators\DateTimeValidator.cs" />
+    <Compile Include="Validation\_ValueValidators\DecimalValidator.cs" />
+    <Compile Include="Validation\_ValueValidators\DoubleValidator.cs" />
+    <Compile Include="Validation\_ValueValidators\SingleValidator.cs" />
+    <Compile Include="Validation\_ValueValidators\Int32Validator.cs" />
+    <Compile Include="Validation\IValueValidator.cs" />
+    <Compile Include="Validation\_ValueValidators\Int64Validator.cs" />
+    <Compile Include="Utilities\ObjectUtils.cs" />
+    <Compile Include="Validation\_ValueValidators\SByteValidator.cs" />
+    <Compile Include="Validation\_ValueValidators\Int16Validator.cs" />
+    <Compile Include="Validation\_ValueValidators\StringValidator.cs" />
+    <Compile Include="Utilities\TypeComparisonUtils.cs" />
+    <Compile Include="Validation\_ValueValidators\TimeSpanValidator.cs" />
+    <Compile Include="Validation\_ValueValidators\UInt32Validator.cs" />
+    <Compile Include="Validation\_ValueValidators\UInt64Validator.cs" />
+    <Compile Include="Validation\_ValueValidators\UInt16Validator.cs" />
+    <Compile Include="Validation\ValueValidatorFactory.cs" />
+    <Compile Include="Validation\ValueValidatorFactoryManager.cs" />
+    <Compile Include="Validation\ValueValidators.cs" />
+    <Compile Include="Cryptography\CryptoTransformHelpers.cs" />
+    <Compile Include="Cryptography\EncryptableAttribute.cs" />
+    <Compile Include="Cryptography\ICryptoTransformable.cs" />
+    <Compile Include="Cryptography\RijndaelCryptoTransform.cs" />
+    <Compile Include="ValueDescriptor.cs" />
+    <Compile Include="ValueDescriptors.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
