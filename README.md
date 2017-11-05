@@ -3,3 +3,6 @@ org.Core is created based on .NET framework 4.5. For small sized project and/or 
 
 ## Installing
 org.Core is currently not provided on Nuget and NPM but it will be provided as soon as org.Core is ready.
+
+## Documentation
+documentation is not supported yet. 
